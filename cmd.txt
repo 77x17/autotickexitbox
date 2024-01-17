@@ -1,0 +1,5 @@
+monkey -p com.bfast.bfree -c android.intent.category.LAUNCHER 1
+
+input tap 150 1164
+
+adb shell uiautomator dump && adb pull /sdcard/window_dump.xml && start window_dump.xml
