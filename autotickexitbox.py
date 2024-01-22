@@ -40,7 +40,7 @@ def findLocation(input_png, click = True):
 
     res       = cv2.matchTemplate(img_rgb, template, cv2.TM_CCOEFF_NORMED)
     threshold = .77
-    
+
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
  
     if max_val >= threshold:
@@ -64,7 +64,7 @@ def efast_efree(start_time):
 
         start_time[0] = time.time()
 
-    # print("ok")
+    #print("ok")
     if findLocation("ok.png", False):
         if findLocation("limit.png"):
             global run
@@ -76,7 +76,7 @@ def efast_efree(start_time):
         
         return
 
-    # print("equation")
+    #print("equation")
     while findLocation("equation.png", False):
         ans = 0
 
@@ -98,8 +98,6 @@ def efast_efree(start_time):
 
             if not find:
                 ans = 9
-
-        # print(ans)
 
         findLocation("ansbox.png")
 
@@ -193,4 +191,3 @@ if __name__ == '__main__':
         run_command("adb shell input tap 0 0")
         time.sleep(600)
         run_command("adb shell input tap 0 0")
-        
